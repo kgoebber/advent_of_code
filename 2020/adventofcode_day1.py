@@ -25,3 +25,13 @@ for i in range(data.size):
                 answer2 = data[i]*data[j]*data[k]
                 print(f'Part 2: {answer2}')
 
+# Improved Answer
+from itertools import combinations
+
+combo2 = np.array(list(combinations(data, 2)))
+answer1 = combo2[combo2.sum(axis=1) == 2020][0].prod()
+print(f'Part 1: {answer1}')
+
+combo3 = np.array(list(combinations(data, 3)))
+answer2 = combo3[combo3.sum(axis=1) == 2020][0].prod()
+print(f'Part 2: {answer2}')
